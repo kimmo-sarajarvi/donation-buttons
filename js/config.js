@@ -5,9 +5,9 @@ C.translations = {};
 ////// can be changed: ///////
 C.projectId = 'demo-project'; //important: change this ID when copying/forking this project
 C.lowerLimit = 1; //the lowest amount that is possible to spend
-C.upperLimit = 210; //the highest amount that is possible to spend
+C.upperLimit = 350; //the highest amount that is possible to spend
 C.doneAmounts = [5,6,10,300]; //amounts that are verified to be already done (donation already received)
-C.elementsByRow = 15; //number of buttons in one row
+C.elementsByRow = 25; //number of buttons in one row
 C.backgroundImage = 'img/background.jpg'; //path to the background image
 C.currency = ''; //symbol for currency to show (use '' for no currency)
 C.fontSize = '13px'; //font size of the amounts in the buttons
