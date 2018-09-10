@@ -20,12 +20,22 @@
       <h1 data-i18n>Donation visualization // Visualisierung von Spenden</h1>
       <div data-i18n>
           <p>
-              <span><b>Project name:</b> Demo Project</span><br/>
-              <span><b>Description:</b> This project is just a demo.</span>
+              <span><b>Project name:</b> House for Family Sarajärvi in Costa Rica</span><br/>
+              <span><b>Description:</b> The boxes 1-350 are worth their value in $ or €.
+		      E.g if you want to take the box 1, you´ll donate $1, or if you want to take the box 135, 
+		      in that case you´ll donate $135.
+		      When all the boxes are taken, the house should be funded.</span>
           </p>
           <p>
-              <span><b>Projektname:</b> Demo Projekt</span><br/>
-              <span><b>Beschreibung:</b> Dieses Projekt ist nur eine Demo.</span>
+              <span><b>Projektname:</b> Haus für Familie Sarajärvi in Costa Rica</span><br/>
+              <span><b>Beschreibung:</b> Die Boxen 1-350 entsprechen dem Wert in Dollar oder Euro. Mit Auswahl von Box 1 spendest du 
+		  einen Euro, mit Box 135 spendest du 135€. Wenn alle Boxen gespendet sind, sollte das Haus finanziert sein.</span>
+          </p>
+	      <p>
+              <span><b>Project name:</b> House for Family Sarajärvi in Costa Rica</span><br/>
+              <span><b>Description:</b> Laatikot 1-350 ovat kukin oman numeronsa arvoisia euroissa.
+Esim. jos haluat ottaa laatikon 1, lahjoitat 1€ (10kr), tai jos haluat ottaa laatikon 135, lahjoitat silloin 135€ (1350kr).
+Kun kaikki laatikot ovat otettuja, pitäisi talo olla rahoitettu.</span>
           </p>
       </div>
 
@@ -103,7 +113,7 @@
           var i18n = window.domI18n({
               selector: '[data-i18n]',
               separator: ' // ',
-              languages: ['en', 'de'],
+              languages: ['en', 'de', 'fi'],
               defaultLanguage: 'en'
           });
           i18n.changeLanguage(getBrowserLang());
