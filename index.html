@@ -122,7 +122,9 @@ Kun kaikki laatikot ovat otettuja, pitäisi talo olla rahoitettu.</span>
       }
 
       function getBrowserLang() {
-          return navigator.language.substring(0,2);
+          var lang = navigator.language.substring(0,2);
+	  if(lang == 'fi') lang = 'sv';
+	  return lang;
       }
 
       function getTranslation(key, replace1, replace2) {
