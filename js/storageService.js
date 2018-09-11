@@ -1,11 +1,15 @@
 window.storageService = {};
-storageService.marked = [5, 7, 100, 101, 200];
+storageService.marked = [];
 storageService.updateHanlder = null;
 
 storageService.getClickedAmounts = function () {
     return new Promise(function (resolve) {
         getFromCloudInternal().then(function (data) {
-            storageService.marked = data;
+            if(!data) {
+                saveToCloudInternal();
+            } else {
+                storageService.marked = data;
+            }
             resolve(storageService.marked);
         });
     });
