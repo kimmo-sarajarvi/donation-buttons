@@ -18,17 +18,17 @@
 <body>
   <div id="content" style="display: none">
       <h1 data-i18n>Donation visualization // Visualisierung von Spenden</h1>
-      <div data-i18n>
+      <div data-i18n class="text">
           <p>
               <span><b>Project name:</b> House for Family Sarajärvi in Costa Rica</span><br/>
               <span><b>Description:</b> The boxes 1-350 are worth their value in $ or €.
-		      E.g if you want to take the box 1, you´ll donate $1, or if you want to take the box 135, 
+		      E.g if you want to take the box 1, you´ll donate $1, or if you want to take the box 135,
 		      in that case you´ll donate $135.
 		      When all the boxes are taken, the house should be funded.</span>
           </p>
           <p>
               <span><b>Projektname:</b> Haus für Familie Sarajärvi in Costa Rica</span><br/>
-              <span><b>Beschreibung:</b> Die Boxen 1-350 entsprechen dem Wert in Dollar oder Euro. Mit Auswahl von Box 1 spendest du 
+              <span><b>Beschreibung:</b> Die Boxen 1-350 entsprechen dem Wert in Dollar oder Euro. Mit Auswahl von Box 1 spendest du
 		  einen Euro, mit Box 135 spendest du 135€. Wenn alle Boxen gespendet sind, sollte das Haus finanziert sein.</span>
           </p>
 	      <p>
@@ -48,7 +48,7 @@ Kun kaikki laatikot ovat otettuja, pitäisi talo olla rahoitettu.</span>
       </div>
 
       <div data-i18n>
-          <div>
+          <div class="text">
               <h2>How this page works:</h2>
               <ol>
                   <li>Every button represents an amount in USD ($) or EUR (€)</li>
@@ -107,6 +107,10 @@ Kun kaikki laatikot ovat otettuja, pitäisi talo olla rahoitettu.</span>
           btnW = (imageW - btnMarginPx) / C.elementsByRow - 0.5;
           btnH = (imageH - btnMarginPx) / Math.ceil((C.upperLimit-C.lowerLimit+1)/C.elementsByRow) - 0.5;
           document.getElementById('container').style.height = imageH + 'px';
+          var texts = document.getElementsByClassName('text');
+          for(var i=0; i<texts.length; i++) {
+              texts[i].style.maxWidth = imageW + 'px';
+          }
       }
 
 	  function initI18n() {
@@ -123,8 +127,8 @@ Kun kaikki laatikot ovat otettuja, pitäisi talo olla rahoitettu.</span>
 
       function getBrowserLang() {
           var lang = navigator.language.substring(0,2);
-	  if(lang == 'fi') lang = 'sv';
-	  return lang;
+          if(lang == 'sv') lang = 'fi';
+          return lang;
       }
 
       function getTranslation(key, replace1, replace2) {
