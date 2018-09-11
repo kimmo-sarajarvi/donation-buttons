@@ -48,9 +48,12 @@ function initCloud() {
     };
     firebase.initializeApp(config);
     firebase.database().ref(getStorageRef()).on('value', function(snapshot) {
-        storageService.marked = JSON.parse(snapshot.val());
-        if(storageService.updateHanlder) {
-            storageService.updateHanlder(storageService.marked);
+        var value = JSON.parse(snapshot.val());
+        if(value) {
+            storageService.marked = value;
+            if(storageService.updateHanlder) {
+                storageService.updateHanlder(storageService.marked);
+            } 
         }
     });
 }
