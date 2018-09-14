@@ -138,15 +138,15 @@ Kun kaikki laatikot ovat otettuja, pitäisi talo olla rahoitettu.</span>
           document.getElementById('selectLang').value = getLang();
       }
 
-      function getLang(chosenLang) {
-          var lang = chosenLang || navigator.language.substring(0,2);
+      function getLang() {
+          var lang = window.chosenLang || navigator.language.substring(0,2);
           if(lang == 'sv') lang = 'fi';
           return lang;
       }
 
       function chooseLang(event) {
-	      var chosen = event.target.value;
-          window.i18n.changeLanguage(getLang(chosen));
+	      window.chosenLang = event.target.value;
+          window.i18n.changeLanguage(getLang());
       }
 
       function getTranslation(key, replace1, replace2) {
