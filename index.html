@@ -17,7 +17,19 @@
 
 <body>
   <div id="content" style="display: none">
-      <h1 data-i18n>Donation visualization // Visualisierung von Spenden</h1>
+      <div class="row">
+          <h1 class="four columns" data-i18n>Donation visualization // Visualisierung von Spenden</h1>
+          <div class="five columns">
+              <span data-i18n>Language // Sprache // Kieli</span>  <span> </span>
+              <select id="selectLang" onchange="chooseLang(event)">
+                  <option value="en">English</option>
+                  <option value="fi">Finnish</option>
+                  <option value="sv">Swedish</option>
+                  <option value="de">German</option>
+              </select>
+          </div>
+      </div>
+
       <div data-i18n class="text">
           <p>
               <span><b>Project name:</b> House for Family Sarajärvi in Costa Rica</span><br/>
@@ -114,27 +126,33 @@ Kun kaikki laatikot ovat otettuja, pitäisi talo olla rahoitettu.</span>
       }
 
 	  function initI18n() {
-          var i18n = window.domI18n({
+          window.i18n = window.domI18n({
               selector: '[data-i18n]',
               separator: ' // ',
               languages: ['en', 'de', 'fi'],
               defaultLanguage: 'en'
           });
-          i18n.changeLanguage(getBrowserLang());
-          console.log('using language: ' + getBrowserLang());
+          window.i18n.changeLanguage(getLang());
+          console.log('using language: ' + getLang());
           document.getElementById('content').style.display = "block";
+          document.getElementById('selectLang').value = getLang();
       }
 
-      function getBrowserLang() {
-          var lang = navigator.language.substring(0,2);
+      function getLang(chosenLang) {
+          var lang = chosenLang || navigator.language.substring(0,2);
           if(lang == 'sv') lang = 'fi';
           return lang;
+      }
+
+      function chooseLang(event) {
+	      var chosen = event.target.value;
+          window.i18n.changeLanguage(getLang(chosen));
       }
 
       function getTranslation(key, replace1, replace2) {
 	      var translations = C.translations[key];
           if(!translations) return '';
-          var translated = translations[getBrowserLang()];
+          var translated = translations[getLang()];
           if(!translated) {
               translated = translations['en']
           }
