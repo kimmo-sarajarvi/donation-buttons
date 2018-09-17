@@ -17,15 +17,19 @@ C.redirectDelayMs = 1000; //delay in milliseconds, before the redirect is done (
 C.translations['confirmDonate'] = {
     'en' : "Do you want to donate the amount of {0}{1}? Clicking on 'OK' will mark this amount as done and redirect you to a page with payment information.",
     'de' : 'Möchtest du wirklich den Betrag von {0}{1} spenden? Ein Klick auf "OK" wird den Betrag als "gespendet" markieren und dich zu einer Seite mit Zahlungsinformationen weiterleiten.',
-    'fi' : 'Haluatko lahjoittaa summan {0}{1}? Painamalla ”OK” summa tulee valituksi ja sinut ohjataan sivulle, jossa on lahjoitustiedot.'
+    'fi' : 'Haluatko lahjoittaa summan {0}{1}? Painamalla ”OK” summa tulee valituksi ja sinut ohjataan sivulle, jossa on lahjoitustiedot.',
+    'sv' : 'Vill du donera summan {0}{1}? när du klickar på "OK" så kommer du att sändas vidare till en sida med donations info.'
 };
 C.translations['confirmUndo'] = {
     'en' : "Do you really want to unmark the amount {0}{1}? Please only do this if you clicked on this button before and you now decided to not spend the money.",
     'de' : 'Möchtest du wirklich die Markierung des Betrags von {0}{1} rückgängig machen? Bitte führe diesen Schritt nur aus, wenn du zuvor auf den Button geklickt hast und nun entschieden hast den Betrag doch nicht zu spenden.',
-    'fi' : 'Oletko varma, että haluat poistaa valinnan summasta {0}{1} Tee näin ainoastaan, jos painoit nappulaa aiemmin ja päätitkin olla lahjoittamatta summaa.'
+    'fi' : 'Oletko varma, että haluat poistaa valinnan summasta {0}{1} Tee näin ainoastaan, jos painoit nappulaa aiemmin ja päätitkin olla lahjoittamatta summaa.',
+    'sv' : 'Är du säker på att du vill avbryta donationen för summan {0}{1}, gör det endast om det var du som reserverade den.'
 };
 C.translations['redirectURL'] = {
     'en' : 'http://www.sarajarvet.com/support-info.html',
-    'fi' : 'http://sarajarvet.weebly.com/kannatustiedot.html'
+    'de' : 'http://www.sarajarvet.com/support-info.html',
+    'fi' : 'http://sarajarvet.weebly.com/kannatustiedot.html',
+    'sv' : 'http://www.sarajarvet.com/support-info.html'
 };
 /////////////////////////////

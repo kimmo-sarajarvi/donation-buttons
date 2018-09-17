@@ -18,9 +18,9 @@
 <body>
   <div id="content" style="display: none">
       <div class="row">
-          <h1 class="four columns" data-i18n>Donation visualization // Visualisierung von Spenden // Donation visualization</h1>
+          <h1 class="four columns" data-i18n>Donation visualization // Visualisierung von Spenden // Lahjoitussivu // Donations sida</h1>
           <div class="five columns">
-              <span data-i18n>Language // Sprache // Kieli</span>  <span> </span>
+              <span data-i18n>Language // Sprache // Kieli // Språk</span>  <span> </span>
               <select id="selectLang" onchange="chooseLang(event)">
                   <option value="en">English</option>
                   <option value="fi">Finnish</option>
@@ -44,10 +44,12 @@
 		  einen Euro, mit Box 135 spendest du 135€. Wenn alle Boxen gespendet sind, sollte das Haus finanziert sein.</span>
           </p>
 	      <p>
-              <span><b>Project name:</b> House for Family Sarajärvi in Costa Rica</span><br/>
-              <span><b>Description:</b> Laatikot 1-350 ovat kukin oman numeronsa arvoisia euroissa.
-Esim. jos haluat ottaa laatikon 1, lahjoitat 1€ (10kr), tai jos haluat ottaa laatikon 135, lahjoitat silloin 135€ (1350kr).
-Kun kaikki laatikot ovat otettuja, pitäisi talo olla rahoitettu.</span>
+              <span><b>Projektin nimi:</b> Talo Sarajärvien perheelle Costa Ricaan</span><br/>
+              <span><b>Selitys:</b> Laatikot 1-350 ovat kukin oman numeronsa arvoisia euroissa. Esim. jos haluat ottaa laatikon 1, lahjoitat 1€ (10kr), tai jos haluat ottaa laatikon 135, lahjoitat silloin 135€ (1350kr). Kun kaikki laatikot ovat otettuja, pitäisi talo olla rahoitettu.</span>
+          </p>
+          <p>
+              <span><b>Projekt namn:</b> Hus till Familjen Sarajärvi i Costa Rica</span><br/>
+              <span><b>Beskrivning:</b> Varje Box 1-350 är alla värda sitt eget nummer I € (eller 10 X i SEK). T.ex. om du vill ta boxen 1, donerar du 1€/10kr, eller om du vill ta boxen 135 så donerar du 135€/1350kr. När alla boxarna är tagna så borde huset vara finansierat. </span>
           </p>
       </div>
 
@@ -81,13 +83,22 @@ Kun kaikki laatikot ovat otettuja, pitäisi talo olla rahoitettu.</span>
               </ol>
           </div>
           <div>
-              <h2>How this page works:</h2>
+              <h2>Näin lahjoitat:</h2>
               <ol>
-                  <li>Every button represents an amount in USD ($) or EUR (€)</li>
-                  <li>Semi-Transparent numbers are already marked as done by some user, transparent spots are verified to be done.</li>
-                  <li>Click on a non-semi-transparent button if you want to donate a specific amount.</li>
-                  <li>You will be redirected to a page with payment information - please choose a payment method and do the donation.</li>
-                  <li>If you decide to not donate an amount you have already clicked on, please re-click the amount to unmark it.</li>
+                  <li>Jokainen ruutu kuvaa kyseistä summaa euroissa tai dollareissa (USD). </li>
+                  <li>Puoliläpinäkyvät numerot ovat jo valittuja jonkun lahjoittajan toimesta, poistetut ruudut ovat niitä, jotka lahjoittajat ovat jo maksaneet.</li>
+                  <li>Klikkaa ei-läpinäkyvää ruutua, jos haluat lahjoittaa tietyn summan.</li>
+                  <li>Sinut ohjataan sivulle, jossa on maksutiedot- ole hyvä ja valitse maksutapa ja tee lahjoitus.</li>
+                  <li>Jos päätätkin olla lahjoittamatta summaa, jonka olet jo valinnut, klikkaa ruutua uudestaan poistaaksesi valinnan.</li>
+              </ol>
+          </div>
+          <div>
+              <h2>Så här donerar du:</h2>
+              <ol>
+                  <li>Varje box representerar sin summa i € (10 X summan i SEK)</li>
+                  <li>Du kan välja vilket nummer som helst för att donera summan, dock inte de genomskinliga, för de är redan reserverade.</li>
+                  <li>Efter att du klickat på numret kommer du bli vidaresänd till donations informations sidan, välj din metod och donera.</li>
+                  <li>Om du vill avbryta din donation, så ber vi dig återigen klicka på samma box, för att ta bort reservationen.</li>
               </ol>
           </div>
       </div>
@@ -139,7 +150,7 @@ Kun kaikki laatikot ovat otettuja, pitäisi talo olla rahoitettu.</span>
           window.i18n = window.domI18n({
               selector: '[data-i18n]',
               separator: ' // ',
-              languages: ['en', 'de', 'fi'],
+              languages: ['en', 'de', 'fi', 'sv'],
               defaultLanguage: 'en'
           });
           window.i18n.changeLanguage(getLang());
@@ -150,7 +161,6 @@ Kun kaikki laatikot ovat otettuja, pitäisi talo olla rahoitettu.</span>
 
       function getLang() {
           var lang = window.chosenLang || navigator.language.substring(0,2);
-          if(lang == 'sv') lang = 'fi';
           return lang;
       }
 
