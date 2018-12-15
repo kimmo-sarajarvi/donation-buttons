@@ -3,6 +3,7 @@ window.C = {};
 C.translations = {};
 
 ////// can be changed: ///////
+C.projectEnabled = true; //true or false, if false the page just shows a notice that the project is not enabled
 C.projectId = 'sarajarvi-house-project-costa-rica'; //important: change this ID when copying/forking this project
 C.lowerLimit = 1; //the lowest amount that is possible to spend
 C.upperLimit = 350; //the highest amount that is possible to spend

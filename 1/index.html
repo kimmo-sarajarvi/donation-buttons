@@ -16,7 +16,12 @@
 </head>
 
 <body>
-  <div id="content" style="display: none">
+    <div id="disabledMessage" style="display: none">
+        <p>
+            This project is currently disabled. Go to <i>config.js</i> and set <i>C.projectEnabled = true</i> to enable it.
+        </p>
+    </div>
+    <div id="content" style="display: none">
       <div class="row">
           <h1 class="four columns" data-i18n>Donation visualization // Visualisierung von Spenden // Lahjoitussivu // Donations sida</h1>
           <div class="five columns">
@@ -102,23 +107,30 @@
               </ol>
           </div>
       </div>
+        <div style="margin-top: 2em; font-size: 0.7em">
+            Not confirmed amounts: <span id="markedInfo"></span>
+        </div>
   </div>
 
   
   <script>
-	  var btnMarginPx = 2;
-	  var imageW, imageH, btnW, btnH;
-	  document.getElementById("image").src = C.backgroundImage;
-	  document.getElementById("image").onload = init;
-      window.onresize = function(event) {
-          if(window.initTimeoutHandler) {
-              clearTimeout(window.initTimeoutHandler)
-          }
-          window.initTimeoutHandler = setTimeout(function () {
-              calcSizes();
-              resizeButtons();
-          }, 100);
-      };
+      if(!C.projectEnabled) {
+          document.getElementById('disabledMessage').style.display = "block";
+      } else {
+          var btnMarginPx = 2;
+          var imageW, imageH, btnW, btnH;
+          document.getElementById("image").src = C.backgroundImage;
+          document.getElementById("image").onload = init;
+          window.onresize = function(event) {
+              if(window.initTimeoutHandler) {
+                  clearTimeout(window.initTimeoutHandler)
+              }
+              window.initTimeoutHandler = setTimeout(function () {
+                  calcSizes();
+                  resizeButtons();
+              }, 100);
+          };
+      }
 
 	  function init() {
 		  initI18n();
@@ -130,6 +142,13 @@
           });
           storageService.setUpdateHandler(function (clickedAmounts) {
               console.log('clicked got from cloud storage: ' + clickedAmounts);
+              var notConfirmed = clickedAmounts.filter(function(elem) {
+                  return !C.doneAmounts.includes(elem);
+              });
+              notConfirmed = notConfirmed.sort(function(a,b) {
+                  return a - b;
+              });
+              document.getElementById('markedInfo').innerHTML = JSON.stringify(notConfirmed);
               markButtons(clickedAmounts);
           })
 	  }
