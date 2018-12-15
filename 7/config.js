@@ -4,7 +4,7 @@ C.translations = {};
 
 ////// can be changed: ///////
 C.projectEnabled = false;
-C.projectId = 'sarajarvi-project-2'; //important: change this ID when copying/forking this project
+C.projectId = 'sarajarvi-project-7'; //important: change this ID when copying/forking this project
 C.lowerLimit = 1; //the lowest amount that is possible to spend
 C.upperLimit = 350; //the highest amount that is possible to spend
 C.doneAmounts = []; //amounts that are verified to be already done (donation already received)
