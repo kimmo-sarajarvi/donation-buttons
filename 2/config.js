@@ -3,12 +3,12 @@ window.C = {};
 C.translations = {};
 
 ////// can be changed: ///////
-C.projectEnabled = false;
+C.projectEnabled = true;
 C.projectId = 'sarajarvi-project-2'; //important: change this ID when copying/forking this project
 C.lowerLimit = 1; //the lowest amount that is possible to spend
-C.upperLimit = 350; //the highest amount that is possible to spend
+C.upperLimit = 100; //the highest amount that is possible to spend
 C.doneAmounts = []; //amounts that are verified to be already done (donation already received)
-C.elementsByRow = 25; //number of buttons in one row
+C.elementsByRow = 10; //number of buttons in one row
 C.backgroundImage = 'background.jpg'; //path to the background image
 C.currency = ''; //symbol for currency to show (use '' for no currency)
 C.fontSize = '13px'; //font size of the amounts in the buttons
@@ -28,9 +28,9 @@ C.translations['confirmUndo'] = {
     'sv' : 'Är du säker på att du vill avbryta donationen för summan {0}{1}, gör det endast om det var du som reserverade den.'
 };
 C.translations['redirectURL'] = {
-    'en' : 'http://www.sarajarvet.com/support-info.html',
-    'de' : 'http://www.sarajarvet.com/support-info.html',
-    'fi' : 'http://sarajarvet.weebly.com/kannatustiedot.html',
-    'sv' : 'http://www.sarajarvet.com/support-info.html'
+    'en' : 'https://viviletigo.wixsite.com/ourweddingsite',
+    'de' : 'https://viviletigo.wixsite.com/ourweddingsite',
+    'fi' : 'https://viviletigo.wixsite.com/ourweddingsite',
+    'sv' : 'https://viviletigo.wixsite.com/ourweddingsite'
 };
 /////////////////////////////
